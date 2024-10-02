@@ -1,0 +1,426 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    padding-top: 110px;
+}
+
+header {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 10px 20px;
+    position: fixed; /* Fija el encabezado en la parte superior de la página */
+    top: 0; /* Posición en la parte superior */
+    left: 0; /* Posición en el borde izquierdo */
+    width: 100%; /* Asegura que ocupe el ancho completo */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+header h1 {
+    margin: 10px;
+    text-align: center;
+    position: relative;
+    z-index: 1000;
+    font-size: 30px; /* Tamaño de la fuente */
+    color: white; /* Color del texto */
+    text-shadow: 
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000; /* Sombra para crear el contorno */
+}
+.line {
+    position: absolute; /* Permite posicionar la línea detrás del h1 */
+    left: 0; /* Alinea la línea a la izquierda */
+    right: 0; /* Alinea la línea a la derecha */
+    height: 4px; /* Grosor de la línea */
+    background-color: rgb(251, 255, 14); /* Color amarillo */
+    transform: translateY(-50%); /* Ajusta la línea para que esté centrada verticalmente */
+    bottom: 20px;
+}
+
+/* Navigation Bar */
+.container-nav-bar {
+    background-color: #34495e;
+    position: relative;
+    z-index: 1000;
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #ecf0f1;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.nav-toggle-icon::before {
+    content: '☰'; /* Hamburger icon */
+}
+
+.container-nav-bar {
+    background-color: #34495e;
+    position: relative;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    z-index: 1000;
+}
+
+.nav-menu li {
+    margin: 0 15px;
+}
+
+.nav-menu li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 8px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+    background-color: #2980b9;
+    border-radius: 4px;
+}
+
+.nav-menu.active {
+    display: flex;
+    z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
+}
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .container-nav-bar {
+        background-color: transparent; /* Hide background when collapsed */
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 48%;
+        background-color: #34495e;
+        width: 50%;
+        text-align: center;
+        border-radius: 0 5px 5px 5px;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+    }
+
+    .nav-menu li a {
+        display: block;
+        padding: 10px;
+    }
+
+    .header-title {
+        margin-left: 0;
+        font-size: 20px ;
+    }
+    .line{
+        bottom: 58px;
+    }
+}
+
+/* imagenes de saludo card */
+.card {
+    position: relative ;
+    overflow: cover ;
+    width: 100%;
+    max-width: 100%; /* Ajusta el ancho máximo según lo necesites */
+    margin: 20px auto; /* Centra la tarjeta y añade espacio alrededor */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opcional: sombra alrededor de la tarjeta */
+    
+}
+
+.card-img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    height: 500px; /* Mantiene la relación de aspecto de la imagen */
+    display: block; /* Elimina el espacio debajo de la imagen */
+}
+
+.card-img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background: rgba(138, 138, 138, 0.5); /* Fondo semitransparente para el texto */
+    transition: background 0.3s ease; /* Transición suave para el fondo */
+}
+
+.card:hover .card-img-overlay {
+    background: rgba(46, 46, 46, 0); 
+}
+
+.card-title {
+    font-size: 2rem; /* Ajusta el tamaño de la fuente del título */
+    margin-bottom: 10px; /* Espacio debajo del título */
+    font-family:'Franklin Gothic Medium' ;
+}
+@media (max-width: 768px) {
+    .card-img  {
+        max-width: 100%; 
+        height: 350px;
+        display: block; 
+    }
+    .card-title{
+        max-width: 100%; 
+        height: 250px;
+        margin-top: 90px;
+        text-align: center;
+    }
+
+}
+/*  */
+#quienes-somos{
+    border: 1px solid #000;
+    margin-top: 20px;
+    background-color: rgb(98, 131, 219);
+}
+
+/* Título principal */
+#quienes-somos h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #343a40; /* Color de texto oscuro */
+    margin-bottom: 0px;
+    text-align: center; /* Alinea el texto al centro */
+}
+
+/* Estilo de las columnas */
+#quienes-somos .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; /* Alineación vertical centrada */
+}
+
+#quienes-somos .col-md-8 {
+    flex: 1; /* El texto ocupa más espacio */
+    max-width: 70%; /* El texto ocupa el 70% del contenedor */
+}
+
+#quienes-somos .col-md-4 {
+    flex: 1; /* La imagen ocupa menos espacio */
+    max-width: 29%; /* La imagen ocupa el 30% del contenedor */
+}
+
+/* Texto alineado a la izquierda */
+#quienes-somos p {
+    font-size: 1rem;
+    color: #000000; /* Color de texto gris suave */
+    line-height: 1.5; /* Altura de línea para una mejor legibilidad */
+    text-align: left;
+    margin: 0 20px 0 0; /* Espacio a la derecha para separar del borde de la imagen */
+    padding: 20px  0 0 20px ;
+}
+
+/* Imagen alineada a la derecha */
+#quienes-somos img {
+    max-width: 100%; /* Imagen ocupa el 100% del ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 10px ; /* Bordes redondeados de la imagen */
+    margin-bottom: 20px;
+}
+
+/* Responsivo para pantallas más pequeñas */
+@media (max-width: 768px) {
+    #quienes-somos .row {
+        flex-direction: column; /* Coloca los elementos en columnas */
+    }
+
+    #quienes-somos .col-md-8,
+    #quienes-somos .col-md-4 {
+        max-width: 100%; /* Ambos divs ocupan el 100% del ancho */
+    }
+    
+    #quienes-somos p {
+        margin: 10px 0 20px 0; /* Quita el margen derecho y agrega margen inferior */
+        text-align: center; /* Centra el texto en pantallas pequeñas */
+    }
+    
+    #quienes-somos img {
+        max-width: 80%; /* Asegura que la imagen ocupe el 80% del ancho disponible */
+        height: auto;
+        margin: 0 auto 20px auto; /* Centra la imagen y agrega un margen inferior */
+        display: block; /* Asegura que la imagen se comporte como un bloque */
+    }
+}
+
+/*  */
+#quienes-somos-1{
+    border: 1px solid #000;
+    margin-top: 20px;
+    background-color: #d4d7d8;
+    
+}
+
+/* Título principal */
+#quienes-somos-1 h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #343a40; /* Color de texto oscuro */
+    margin-bottom: 0px;
+    text-align: center; /* Alinea el texto al centro */
+}
+
+/* Estilo de las columnas */
+#quienes-somos-1 .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; /* Alineación vertical centrada */
+}
+
+#quienes-somos-1 .col-md-8 {
+    flex: 1; /* El texto ocupa más espacio */
+    max-width: 70%; /* El texto ocupa el 70% del contenedor */
+}
+
+#quienes-somos-1 .col-md-4 {
+    flex: 1; /* La imagen ocupa menos espacio */
+    max-width: 30%; /* La imagen ocupa el 30% del contenedor */
+}
+
+/* Texto alineado a la izquierda */
+#quienes-somos-1 p {
+    font-size: 1rem;
+    color: #000000; /* Color de texto gris suave */
+    line-height: 1.5; /* Altura de línea para una mejor legibilidad */
+    text-align: left;
+    margin: 0 20px 0 0; /* Espacio a la derecha para separar del borde de la imagen */
+    padding: 20px  0 0 20px ;
+}
+
+/* Imagen alineada a la derecha */
+#quienes-somos-1 img {
+    max-width: 100%; /* Imagen ocupa el 100% del ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 10px; /* Bordes redondeados de la imagen */
+    margin-bottom: 20px;
+    margin: 15px;
+}
+
+/* Responsivo para pantallas más pequeñas */
+@media (max-width: 768px) {
+    #quienes-somos-1 .row {
+        flex-direction: column; /* Coloca los elementos en columnas */
+    }
+
+    #quienes-somos-1 .col-md-8,
+    #quienes-somos-1 .col-md-4 {
+        max-width: 100%; /* Ambos divs ocupan el 100% del ancho */
+    }
+    
+    #quienes-somos-1 p {
+        margin: 10px 0 20px 0; /* Quita el margen derecho y agrega margen inferior */
+        text-align: center; /* Centra el texto en pantallas pequeñas */
+    }
+    
+    #quienes-somos-1 img {
+        max-width: 80%; /* Asegura que la imagen ocupe el 80% del ancho disponible */
+        height: auto;
+        margin: 0 auto 20px auto; /* Centra la imagen y agrega un margen inferior */
+        display: block; /* Asegura que la imagen se comporte como un bloque */
+    }
+}
+/* Botones flotantes */
+.floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.main-btn {
+    background-color: #007bff; /* Color de fondo del botón */
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+    color: white; /* Color del ícono */
+    font-size: 24px; /* Tamaño del ícono */
+}
+
+.main-btn i {
+    margin: 0; /* Alinea el ícono sin margen */
+}
+
+.main-btn:hover {
+    background-color: #0056b3; /* Color de fondo del botón al pasar el cursor */
+}
+
+.floating-menu {
+    position: absolute;
+    bottom: 80px; /* Ajusta la distancia desde el fondo */
+    right: 0;
+    display: none; /* Oculto por defecto */
+    flex-direction: column;
+}
+
+.floating-menu.active {
+    display: flex; /* Muestra el menú cuando la clase 'active' está presente */
+}
+
+.floating-menu-btn {
+    background-color: #6aabff; /* Color de fondo de los botones del menú */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin: 5px 0;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.floating-menu-btn:hover {
+    background-color: #26289b; /* Color de fondo de los botones del menú al pasar el cursor */
+}
+/*  foter*/
+.container-copyright {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+}
